@@ -1,10 +1,10 @@
 package com.springboot_project.services;
 
-import org.springframework.stereotype.Service;
-
-@Service
-public class GreetingService {
-    public String greeting(String name) {
-        return String.format("Hello, %s!", name);
-    }
+public interface GreetingService {
+    /**
+     * Returns a greeting message with the name.
+     * @param name The name to greet.
+     * @return The greeting message with the name.
+     */
+    String greeting(String name);
 }

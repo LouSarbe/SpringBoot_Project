@@ -1,27 +1,19 @@
 package com.springboot_project.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import com.springboot_project.services.GreetingService;
+/**
+ * Greeting controller contract.
+ */
+public interface GreetingController {
+    /**
+     * Returns a greeting message.
+     * @return The greeting message.
+     */
+    String greeting();
 
-@RestController
-public class GreetingController {
-
-    private final GreetingService greetingService;
-
-    public GreetingController(GreetingService greetingService) {
-        this.greetingService = greetingService;
-    }
-    
-    @GetMapping("/greeting")
-    public String greeting(@RequestParam(defaultValue = "World") String name) {
-        return greetingService.greeting(name);
-    }
-
-    @GetMapping("/greeting/{name}")
-    public String greetingWithName(@PathVariable String name) {
-        return greetingService.greeting(name);
-    }   
+    /**
+     * Returns a greeting message with the name.
+     * @param name The name to greet.
+     * @return The greeting message with the name.
+     */
+    String greeting(String name);
 }

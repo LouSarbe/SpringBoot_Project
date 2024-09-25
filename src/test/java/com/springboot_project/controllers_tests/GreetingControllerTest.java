@@ -16,5 +16,4 @@ public class GreetingControllerTest {
         String result = greetingController.greeting("World");
         assertEquals("Hello, World!", result);
     }
-
 }
