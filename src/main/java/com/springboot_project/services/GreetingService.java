@@ -1,5 +1,8 @@
 package com.springboot_project.services;
 
+/**
+ * The greeting service interface.
+ */
 public interface GreetingService {
     /**
      * Returns a greeting message with the name.
